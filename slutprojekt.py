@@ -2,7 +2,7 @@ import os
 import discord
 from discord.ext import commands
 
-TOKEN = open("discordbot/keys/secret3.key").read()
+TOKEN = open("slutprojekt/secret3.key").read()
 
 client = commands.Bot(command_prefix=["-"], case_insensitive=True)
 
@@ -35,7 +35,7 @@ async def unload(ctx, extension):
         client.unload_extension(f"cogs.{extension}")
 
 # Load all Cogs on startup
-for fileName in os.listdir("./Discordbot/cogs"):
+for fileName in os.listdir("./slutprojekt/cogs"):
     if fileName.endswith(".py"):
             client.load_extension(f"cogs.{fileName[:-3]}")
 

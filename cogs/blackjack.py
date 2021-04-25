@@ -6,7 +6,7 @@ class blackjack(commands.Cog):
     def __init__(self, client):
         self.client = client
 
-    @commands.command()
+    @commands.command(name= "spelabj", help= "spela blackjack")
     async def helen(self, ctx):
         await ctx.send("HELENA <:helenium:829301282220015676>")
         

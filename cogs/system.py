@@ -8,11 +8,13 @@ class system(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready(self):
-        print(f'{self.client.user} has connected to Discord!')
+        print(f'{self.client.user} är online!')
+        activity = discord.Game(name="World domination simulator", type=3)
+        await self.client.change_presence(status=discord.Status.online, activity=activity)
         #mememes = client.get_channel(685606448327294990)
         #await mememes.send("redo")
 
-    @commands.command()
+    @commands.command(name= "ping", help= "ping för boten och api")
     async def ping(self,ctx):
         dt = datetime.now(tz=timezone.utc)
         naive = dt.replace(tzinfo=None)
